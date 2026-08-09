@@ -45,10 +45,7 @@ ul.hobbies {
     padding: 10px;
     margin: 0px;
 }
-.navigation a {
-color:var(--secondary);
-text-decoration:none;
-}
+
 
 #heading {
  color:var(--secondary); 
@@ -86,14 +83,4 @@ section .parent {
 
 footer {
     text-align: center;
-}
-
-.contact-detail {
-    color:var(--text-color); 
-    font-size: 18px;
-}
-
-.about-description {
-    color:var(--text-color); 
-    font-size: 18px;
 }
