@@ -1,5 +1,5 @@
-Fixed the image tag showing redundant alternative text in WAVE for better accessibility for visually impared users
+Added <alt> text for my home page image, then fixed the image tag showing redundant alternative text in WAVE for better accessibility for visually impared users
 
-Fixed color contrast for better visualization for the users
+Adjusted colors to satisfy WCAG AA contrast standards, improving text legibility across all screen types and lighting conditions.
 
-Fixed my document tittle tag that WAVE flagged for overly generic and not descriptive related to site content
+Updated the generic <title> tag to a page-specific title to provide clear site context for screen readers and browser tabs.  
