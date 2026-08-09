@@ -11,7 +11,7 @@ body {
     background-color:var(--primary); 
     font-family: Arial, Helvetica, sans-serif; 
     font-size: 16px; 
-    color:rgb(0, 0, 0);
+    color:#000000;
 }
 
 main{
@@ -22,10 +22,6 @@ h2 {
     text-align:left; 
     font-size: 30px; 
     font-family: "Lora", serif;
-}
-
-a {
-    margin: 10px;
 }
 
 .hobbies li {
