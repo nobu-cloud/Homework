@@ -4,40 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="description" content="Personal portfolio and showcase of projects by Samrat.">
+    <title>Samrat | Portfolio</title>
 
-    <title>Samrat's Porfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" difer></script>
 </head>
 
 <body>
-  
-    <header>
-        <h1 id="heading"> My Portfolio</h1>
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">Samrat<span>.dev</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!--Main Content-->
     <main>
-        <!--Section-->
-        <section>
-            <div class="parent">
-                <div class="child">
-                    <h2 style="margin: 0;">My hobbies</h2>
-                    <ul class="hobbies">
-                        <li>Playing Video Games</li>
-                        <li>Riding my Motorcycle</li>
-                        <li>Creating Websites</li>
-                        <li>Working Out</li>
-                        <li>Learning New Things</li>
-                    </ul>
-                </div>
-                <img src="assets/images/riding.jpg" alt="Man riding a motorcycle"/>
+
+        <section class="hero-section">
+            <h1 class="hero-title">Building Web Experiences & Exploring New Technology</h1>
+            <p class="hero-subtitle">Welcome to my personal showcase. I design, code, and continuously build on my
+                passions.</p>
+
+            <div class="hero-cta">
+                <button id="counter-btn" class="btn btn-primary" disabled>Explore My Work</button>
+
+                <!-- <a href="contact.html" class="btn btn-primary" disabled>Explore My Work</a> -->
+                <button id="counter-btn" class="btn btn-secondary" disabled>Explore My Work</button>
+                <!-- <a href="contact.html" class="btn btn-secondary" disabled>Let's Connect</a> -->
+            </div>
+        </section>
+
+        <section class="hobbies-section container">
+            <h2 class="section-title">My Hobbies & Interests</h2>
+
+            <div class="add-hobby-box">
+                <input type="text" id="new-hobby-input" class="text-input" placeholder="Add a new hobby...">
+                <button id="add-hobby-btn" class="btn btn-primary">Add Hobby</button>
             </div>
 
+            <ul id="hobbies-list" class="hobbies-list">
+                <li class="hobby-card">
+                    <span class="hobby-icon">🏍️</span>
+                    <div class="hobby-info">
+                        <h3>Motorcycling</h3>
+                        <p>Exploring roads and enjoying open rides.</p>
+                    </div>
+                    <button class="delete-btn">Remove</button>
+                </li>
+                <li class="hobby-card">
+                    <span class="hobby-icon">🎮</span>
+                    <div class="hobby-info">
+                        <h3>Video Games</h3>
+                        <p>Immersing in strategic and action-oriented worlds.</p>
+                    </div>
+                    <button class="delete-btn">Remove</button>
+                </li>
+            </ul>
         </section>
     </main>
 
-    <!--Footer-->
-    <footer>Samrat &copy; 2026</footer>
+    <footer class="site-footer">
+        <p>&copy; 2026 Samrat. Designed & built with precision.</p>
+    </footer>
+
 </body>
 
 </html>
