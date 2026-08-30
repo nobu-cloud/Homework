@@ -8,9 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     connectBtn.addEventListener("click", () => {
-        ctaMessage.textContent = "Feel free to reach out via email or LinkedIn!";
+        ctaMessage.textContent = "Feel free to reach out to me via email or LinkedIn!";
     });
-
 
     const newHobbyInput = document.getElementById("new-hobby-input");
     const charCountDisplay = document.getElementById("char-count");
@@ -19,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const textLength = newHobbyInput.value.length;
         charCountDisplay.textContent = `Characters entered: ${textLength}`;
 
-        if (textLength > 20) {
+        if (textLength > 25) {
             newHobbyInput.style.borderColor = "#e11d48";
             newHobbyInput.style.backgroundColor = "#fff1f2";
             charCountDisplay.style.color = "#e11d48";
@@ -68,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return li;
     }
 
-    addHobbyBtn.addEventListener("click", () => {
+    function submitHobby() {
         const hobbyText = newHobbyInput.value.trim();
 
         if (hobbyText !== "") {
@@ -80,6 +79,15 @@ document.addEventListener("DOMContentLoaded", () => {
             newHobbyInput.style.backgroundColor = "var(--bg-surface)";
             charCountDisplay.textContent = "Characters entered: 0";
             charCountDisplay.style.color = "var(--text-muted)";
+        }
+    }
+
+    addHobbyBtn.addEventListener("click", submitHobby);
+
+    newHobbyInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            submitHobby();
         }
     });
 
