@@ -1,0 +1,94 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const exploreBtn = document.getElementById("explore-btn");
+    const connectBtn = document.getElementById("connect-btn");
+    const ctaMessage = document.getElementById("cta-message");
+
+    exploreBtn.addEventListener("click", () => {
+        ctaMessage.textContent = "Thanks for checking out my work! Scroll down to see my interests.";
+    });
+
+    connectBtn.addEventListener("click", () => {
+        ctaMessage.textContent = "Feel free to reach out via email or LinkedIn!";
+    });
+
+
+    const newHobbyInput = document.getElementById("new-hobby-input");
+    const charCountDisplay = document.getElementById("char-count");
+
+    newHobbyInput.addEventListener("input", () => {
+        const textLength = newHobbyInput.value.length;
+        charCountDisplay.textContent = `Characters entered: ${textLength}`;
+
+        if (textLength > 20) {
+            newHobbyInput.style.borderColor = "#e11d48";
+            newHobbyInput.style.backgroundColor = "#fff1f2";
+            charCountDisplay.style.color = "#e11d48";
+        } else if (textLength > 0) {
+            newHobbyInput.style.borderColor = "#2563eb";
+            newHobbyInput.style.backgroundColor = "#f0f9ff";
+            charCountDisplay.style.color = "#2563eb";
+        } else {
+            newHobbyInput.style.borderColor = "var(--border-color)";
+            newHobbyInput.style.backgroundColor = "var(--bg-surface)";
+            charCountDisplay.style.color = "var(--text-muted)";
+        }
+    });
+
+    const addHobbyBtn = document.getElementById("add-hobby-btn");
+    const hobbiesList = document.getElementById("hobbies-list");
+
+    function createHobbyCard(hobbyName) {
+        const li = document.createElement("li");
+        li.className = "hobby-card";
+
+        const iconSpan = document.createElement("span");
+        iconSpan.className = "hobby-icon";
+        iconSpan.textContent = "👣";
+
+        const infoDiv = document.createElement("div");
+        infoDiv.className = "hobby-info";
+
+        const heading = document.createElement("h3");
+        heading.textContent = hobbyName;
+
+        const description = document.createElement("p");
+        description.textContent = "Newly added hobby.";
+
+        infoDiv.appendChild(heading);
+        infoDiv.appendChild(description);
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.className = "delete-btn";
+        deleteBtn.textContent = "Remove";
+
+        li.appendChild(iconSpan);
+        li.appendChild(infoDiv);
+        li.appendChild(deleteBtn);
+
+        return li;
+    }
+
+    addHobbyBtn.addEventListener("click", () => {
+        const hobbyText = newHobbyInput.value.trim();
+
+        if (hobbyText !== "") {
+            const newCard = createHobbyCard(hobbyText);
+            hobbiesList.appendChild(newCard);
+
+            newHobbyInput.value = "";
+            newHobbyInput.style.borderColor = "var(--border-color)";
+            newHobbyInput.style.backgroundColor = "var(--bg-surface)";
+            charCountDisplay.textContent = "Characters entered: 0";
+            charCountDisplay.style.color = "var(--text-muted)";
+        }
+    });
+
+    hobbiesList.addEventListener("click", (event) => {
+        if (event.target.classList.contains("delete-btn")) {
+            const cardToElement = event.target.closest(".hobby-card");
+            if (cardToElement) {
+                cardToElement.remove();
+            }
+        }
+    });
+});
