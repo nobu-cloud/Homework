@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
             emailInput.classList.add("invalid");
             isValid = false;
         } else if (!emailValue.includes("@") || !emailValue.includes(".")) {
-            emailError.textContent = "Please enter a valid email address containing '@' and '.'";
+            emailError.textContent = "Please enter a valid email address containing 'eg., name@domain.com'";
             emailInput.classList.add("invalid");
             isValid = false;
         }
