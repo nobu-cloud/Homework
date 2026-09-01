@@ -99,4 +99,91 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    const contactForm = document.getElementById("contact-form");
+    const nameInput = document.getElementById("user-name");
+    const emailInput = document.getElementById("user-email");
+    const phoneInput = document.getElementById("user-phone");
+    const messageInput = document.getElementById("user-message");
+
+    const nameError = document.getElementById("name-error");
+    const emailError = document.getElementById("email-error");
+    const phoneError = document.getElementById("phone-error");
+    const messageError = document.getElementById("message-error");
+    const formSuccess = document.getElementById("form-success");
+
+    const setupAutoClear = (inputEl, errorEl) => {
+        inputEl.addEventListener("input", () => {
+            if (errorEl.textContent !== "") {
+                errorEl.textContent = "";
+                inputEl.classList.remove("invalid");
+            }
+            formSuccess.textContent = "";
+        });
+    };
+
+    setupAutoClear(nameInput, nameError);
+    setupAutoClear(emailInput, emailError);
+    setupAutoClear(phoneInput, phoneError);
+    setupAutoClear(messageInput, messageError);
+
+    contactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        let isValid = true;
+
+        if (nameInput.value.trim() === "") {
+            nameError.textContent = "Please enter your full name.";
+            nameInput.classList.add("invalid");
+            isValid = false;
+        }
+
+        const emailValue = emailInput.value.trim();
+        if (emailValue === "") {
+            emailError.textContent = "Please enter your email address.";
+            emailInput.classList.add("invalid");
+            isValid = false;
+        } else if (!emailValue.includes("@") || !emailValue.includes(".")) {
+            emailError.textContent = "Please enter a valid email address containing '@' and '.'";
+            emailInput.classList.add("invalid");
+            isValid = false;
+        }
+
+        if (phoneInput.value.trim() === "") {
+            phoneError.textContent = "Please enter your phone number.";
+            phoneInput.classList.add("invalid");
+            isValid = false;
+        }
+
+        if (messageInput.value.trim() === "") {
+            messageError.textContent = "Please enter a message.";
+            messageInput.classList.add("invalid");
+            isValid = false;
+        }
+
+        if (isValid) {
+            formSuccess.textContent = "Message sent successfully!";
+            contactForm.reset();
+        }
+    });
+
+    const quoteText = document.getElementById("quote-text");
+    const quoteAuthor = document.getElementById("quote-author");
+
+    fetch("https://dummyjson.com/quotes/random")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP Error: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            quoteText.textContent = `"${data.quote}"`;
+            quoteAuthor.textContent = `— ${data.author}`;
+        })
+        .catch((error) => {
+            console.error("API Fetch Error:", error);
+            quoteText.textContent = "Could not load quote at this time.";
+            quoteAuthor.textContent = "";
+        });
 });

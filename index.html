@@ -20,6 +20,7 @@
             <a href="index.html" class="logo">Samrat<span>.dev</span></a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#contact-section">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -75,6 +76,46 @@
                     <button class="delete-btn">Remove</button>
                 </li>
             </ul>
+        </section>
+
+        <section class="api-quote-section container">
+            <div id="quote-card" class="quote-card">
+                <p id="quote-text">Loading daily quote...</p>
+                <span id="quote-author"></span>
+            </div>
+        </section>
+
+        <section id="contact-section" class="contact-section container">
+            <h2 class="section-title">Send me a message</h2>
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="user-name">Full Name</label>
+                    <input type="text" id="user-name" name="fullName" class="text-input" placeholder="Jane Doe">
+                    <p id="name-error" class="error-msg"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-email">Email Address</label>
+                    <input type="email" id="user-email" name="email" class="text-input" placeholder="jane@domain.com">
+                    <p id="email-error" class="error-msg"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-phone">Phone Number</label>
+                    <input type="tel" id="user-phone" name="phone" class="text-input" placeholder="(123)-456-7890">
+                    <p id="phone-error" class="error-msg"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-message">Message</label>
+                    <textarea id="user-message" name="message" class="text-input" rows="5"
+                        placeholder="Write your message here..."></textarea>
+                    <p id="message-error" class="error-msg"></p>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <p id="form-success" class="success-msg"></p>
+            </form>
         </section>
     </main>
 

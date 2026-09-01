@@ -10,23 +10,6 @@
     --accent-hover: #1d4ed8;
     --accent-light: #dbeafe;
     --border-color: #e2e8f0;
-
-    /* Layout & Shadows */
-    --max-width: 900px;
-    --radius-sm: 8px;
-    --radius-md: 16px;
-    --radius-lg: 24px;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
-    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
@@ -314,4 +297,84 @@ ul {
 
 .delete-btn:hover {
     background-color: #dc2626;
+}
+
+.contact-section {
+    padding: 3rem 0 5rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--bg-surface);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+textarea.text-input {
+    resize: vertical;
+    font-family: inherit;
+}
+
+.text-input.invalid {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.error-msg {
+    font-size: 0.8rem;
+    color: #ef4444;
+    min-height: 1.1rem;
+}
+
+.success-msg {
+    font-size: 0.9rem;
+    color: #16a34a;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* API Quote Box Styling */
+.api-quote-section {
+    margin-bottom: 2rem;
+}
+
+.quote-card {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: var(--accent-light);
+    border-radius: var(--radius-md);
+    text-align: center;
+    border: 1px solid var(--accent-color);
+}
+
+#quote-text {
+    font-style: italic;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+#quote-author {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-hover);
 }
