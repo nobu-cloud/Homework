@@ -4,6 +4,8 @@ Adjusted colors to satisfy WCAG AA contrast standards, improving text legibility
 
 Updated the generic <title> tag to a page-specific title to provide clear site context for screen readers and browser tabs.  
 
-leftover code for dark theme removed - will add later
-
 Added JS file
+
+Added form filed display error according to the field and its format
+
+API fetch for daily quotes added
